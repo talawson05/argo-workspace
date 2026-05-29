@@ -32,6 +32,9 @@ apim:  # MongoDB Configuration
       pullPolicy: Always
 
     env:
+      # DISABLE MANAGEMENT ANALYTICS LOOKUPS TO ES
+      - name: gravitee_analytics_type
+        value: "none"
       # CORS Configuration - Enable CORS at API level
       - name: gravitee_http_cors_enabled
         value: "true"
@@ -132,6 +135,11 @@ apim:  # MongoDB Configuration
       repository: graviteeio/apim-gateway
       tag: latest
       pullPolicy: Always
+
+    # DISABLE GATEWAY REPORTING TO ES
+    reporters:
+      elasticsearch:
+        enabled: false
 
     service:
       type: ClusterIP

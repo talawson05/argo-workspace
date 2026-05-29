@@ -2,7 +2,7 @@ apim:
   # 1. Enable Embedded MongoDB for Metadata/Configuration
   mongodb:
     enabled: true
-     uri: mongodb://gravitee-mongodb.gravitee-apim.svc.cluster.local:27017/gravitee?serverSelectionTimeoutMS=5000&connectTimeoutMS=5000&socketTimeoutMS=5000
+    uri: mongodb://gravitee-mongodb.gravitee-apim.svc.cluster.local:27017/gravitee?serverSelectionTimeoutMS=5000&connectTimeoutMS=5000&socketTimeoutMS=5000
 
   # 2. Disable Analytics completely to eliminate Elasticsearch dependency
   es:

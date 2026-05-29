@@ -45,3 +45,9 @@ echo "127.0.0.1 api.localhost" | sudo tee -a /etc/hosts
 echo "127.0.0.1 dev.localhost" | sudo tee -a /etc/hosts
 
 
+http://apim.localhost/console
+http://dev.localhost/
+
+curl http://api.localhost/
+
+

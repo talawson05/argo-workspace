@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com' # Replace with your Git repo URL
+    repoURL: 'https://github.com/talawson05/argo-workspace'
     targetRevision: HEAD
-    path: second-echo
+    path: app-helms/second-echo
     helm:
       valueFiles:
         - values.yaml

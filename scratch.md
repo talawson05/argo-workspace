@@ -71,3 +71,6 @@ http://localhost:8002/console
 http://localhost:8003/
 
 
+
+kubectl get ingress -n gravitee
+

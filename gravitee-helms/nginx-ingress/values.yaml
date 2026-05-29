@@ -1,5 +1,6 @@
 ingress-nginx:
   controller:
+    reportNodeInternalIp: true 
     service:
       type: LoadBalancer
     admissionWebhooks:

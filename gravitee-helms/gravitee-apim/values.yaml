@@ -188,12 +188,11 @@ apim:  # MongoDB Configuration
     ingress:
       enabled: true
       ingressClassName: nginx
-      pathType: ImplementationSpecific
-      path: /console(/.*)?
+      pathType: Prefix
+      path: /console
       hosts:
         - apim.localhost
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$1
+      annotations: {}
 
     resources:
       requests:

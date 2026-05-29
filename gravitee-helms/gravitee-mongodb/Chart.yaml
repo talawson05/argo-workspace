@@ -1,0 +1,10 @@
+apiVersion: v2
+name: gravitee-mongodb
+description: Wrapper chart for local development MongoDB dependency
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+dependencies:
+  - name: mongodb
+    version: 15.6.2 # Match the specific version you want to target from the registry
+    repository: oci://registry-1.docker.io/cloudpirates

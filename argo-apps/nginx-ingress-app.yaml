@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/talawson05/argo-workspace.git'
+    targetRevision: HEAD
+    path: gravitee-helms/nginx-ingress
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: ingress-nginx # Matches the target namespace from your command
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

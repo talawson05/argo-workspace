@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gravitee-mongodb
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/talawson05/argo-workspace.git'
+    targetRevision: HEAD
+    path: gravitee-helms/gravitee-mongodb
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: gravitee-apim
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

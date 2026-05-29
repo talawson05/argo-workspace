@@ -1,0 +1,6 @@
+ingress-nginx:
+  controller:
+    service:
+      type: LoadBalancer
+    admissionWebhooks:
+      enabled: false

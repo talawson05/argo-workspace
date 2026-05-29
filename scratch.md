@@ -40,7 +40,8 @@ kubectl apply -f ./bootstrap/root-app.yaml
 % argocd app create graviteegitopsapis --repo https://github.com/jmcx/gravitee-quickstart.git --path 05_GitOps_ArgoCD/resources --dest-server https://kubernetes.default.svc --dest-namespace gravitee application 'graviteegitopsapis' created
 
 
-
-
+echo "127.0.0.1 apim.localhost" | sudo tee -a /etc/hosts
+echo "127.0.0.1 api.localhost" | sudo tee -a /etc/hosts  
+echo "127.0.0.1 dev.localhost" | sudo tee -a /etc/hosts
 
 

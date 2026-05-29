@@ -1,0 +1,4 @@
+gko:
+  # Light configuration tailored for local evaluation
+  manager:
+    replicaCount: 1

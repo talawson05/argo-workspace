@@ -1,0 +1,10 @@
+apiVersion: v2
+name: gravitee-gko
+description: Umbrella chart for Gravitee Kubernetes Operator
+type: application
+version: 1.0.0
+appVersion: "4.x"
+dependencies:
+  - name: gko
+    version: 4.11.7
+    repository: https://helm.gravitee.io

@@ -1,0 +1,10 @@
+apiVersion: v2
+name: gravitee-apim
+description: Umbrella chart for Gravitee API Management
+type: application
+version: 1.0.0
+appVersion: "4.x"
+dependencies:
+  - name: apim
+    version: 4.2.0 # Standard stable 4.x chart release line
+    repository: https://helm.gravitee.io

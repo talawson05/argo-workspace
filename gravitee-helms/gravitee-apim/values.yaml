@@ -1,0 +1,35 @@
+apim:
+  # 1. Enable Embedded MongoDB for Metadata/Configuration
+  mongodb:
+    enabled: true
+
+  # 2. Disable Analytics completely to eliminate Elasticsearch dependency
+  es:
+    enabled: false
+  
+  # Configure Gateway & Management APIs to ignore ES reporters
+  gateway:
+    reporters:
+      elasticsearch:
+        enabled: false
+
+  # 3. Configure Ingress to route via k3d's built-in Traefik
+  ingress:
+    management:
+      enabled: true
+      ingressClassName: traefik
+      path: /management
+      hosts:
+        - localhost
+    portal:
+      enabled: true
+      ingressClassName: traefik
+      path: /portal
+      hosts:
+        - localhost
+    ui:
+      enabled: true
+      ingressClassName: traefik
+      path: /
+      hosts:
+        - localhost

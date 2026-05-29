@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gravitee-gko
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/talawson05/argo-workspace.git'
+    targetRevision: HEAD
+    path: gravitee-helms/gravitee-gko
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd # CRD Operators generally install directly where Argo manages cluster tooling

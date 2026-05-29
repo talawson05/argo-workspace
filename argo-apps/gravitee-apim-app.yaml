@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gravitee-apim
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/talawson05/argo-workspace.git'
+    targetRevision: HEAD
+    path: gravitee-helms/gravitee-apim
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: gravitee # Isolating Gravitee into its own namespace is recommended
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

@@ -35,4 +35,12 @@ helm install second-echo podinfo/podinfo --set ui.message="Yo yo" --set service.
 kubectl apply -f ./bootstrap/root-app.yaml
 
 
+% kubectl create namespace gravitee namespace/gravitee created 
+% kubens argocd Context "minikube" modified. Active namespace is "argocd". 
+% argocd app create graviteegitopsapis --repo https://github.com/jmcx/gravitee-quickstart.git --path 05_GitOps_ArgoCD/resources --dest-server https://kubernetes.default.svc --dest-namespace gravitee application 'graviteegitopsapis' created
+
+
+
+
+
 

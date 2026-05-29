@@ -7,4 +7,4 @@ appVersion: "1.x"
 dependencies:
   - name: ingress-nginx
     version: 4.10.1 # Standard stable version matching current ingress-nginx charts
-    repository: https://github.io
+    repository: https://kubernetes.github.io

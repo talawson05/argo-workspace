@@ -22,7 +22,7 @@ brew install argocd
 argocd login --core
 argocd app list
 
-
+argocd app sync root-echo-apps
 
 
 
@@ -42,5 +42,5 @@ kubectl apply -f ./bootstrap/root-app.yaml
 
 
 
-ytrXxVB-QIq9Mw7Q
+
 

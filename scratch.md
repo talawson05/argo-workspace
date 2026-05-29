@@ -5,6 +5,12 @@ k3d cluster stop mycluster
 k3d cluster start mycluster
 
 
+k3d cluster create mycluster \
+  -p "80:80@loadbalancer" \
+  -p "443:443@loadbalancer" \
+  --k3s-arg "--disable=traefik@server:0"
+
+
 
 
 helm repo add argo https://argoproj.github.io/argo-helm
@@ -49,5 +55,16 @@ http://apim.localhost/console
 http://dev.localhost/
 
 curl http://api.localhost/
+
+
+kubectl config set-context --current --namespace=gravitee
+kubectl port-forward svc/gravitee-apim-gateway 8082:82 -n gravitee
+kubectl port-forward service/gravitee-apim-ui 8002:8002 -n gravitee
+kubectl port-forward service/gravitee-apim-portal 8003:8003 -n gravitee
+
+
+curl http://localhost:8082/
+http://localhost:8002/console
+http://localhost:8003/
 
 

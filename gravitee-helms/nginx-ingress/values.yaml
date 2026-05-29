@@ -2,7 +2,5 @@ ingress-nginx:
   controller:
     service:
       type: LoadBalancer
-    ports:
-      http: 8080
     admissionWebhooks:
       enabled: false

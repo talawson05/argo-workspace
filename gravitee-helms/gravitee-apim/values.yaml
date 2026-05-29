@@ -4,16 +4,16 @@ apim:  # MongoDB Configuration
 
   # Elasticsearch Configuration
   es:
-    enabled: true
-    endpoints:
-      - https://elasticsearch-master:9200
-    security:                                             
-      enabled: true 
-      username: elastic                                    
-      password: [ELASTIC PASSWORD FROM ES INSTALLATION]                                                                                                                                                              
-    ssl:                                                                                                                         
-      verifyHostname: false                                                                                                      
-      trustAll: true
+    enabled: false
+    # endpoints:
+    #   - https://elasticsearch-master:9200
+    # security:                                             
+    #   enabled: true 
+    #   username: elastic                                    
+    #   password: [ELASTIC PASSWORD FROM ES INSTALLATION]                                                                                                                                                              
+    # ssl:                                                                                                                         
+    #   verifyHostname: false                                                                                                      
+    #   trustAll: true
     
   # Repository types
   management:

@@ -1,0 +1,11 @@
+podinfo:
+  replicaCount: 1
+  # Default internal container port is 9898
+  service:
+    type: ClusterIP
+    port: 9898
+    grpcPort: 9797
+  # Custom settings to differentiate this API
+  ui:
+    message: "Yo!"
+    color: "#34577c"

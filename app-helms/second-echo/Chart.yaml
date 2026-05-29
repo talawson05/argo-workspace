@@ -1,0 +1,10 @@
+apiVersion: v2
+name: second-echo
+description: Wrapper chart for the second podinfo API instance
+type: application
+version: 1.0.0
+appVersion: "6.7.0"
+dependencies:
+  - name: podinfo
+    version: 6.7.0
+    repository: https://stefanprodan.github.io/podinfo

@@ -1,0 +1,15 @@
+podinfo:
+  replicaCount: 1
+  # Override container ports via start arguments
+  backend:
+    port: "9899"
+    grpcPort: "9798"
+  # Match the service ports to the new backend ports
+  service:
+    type: ClusterIP
+    port: 9899
+    grpcPort: 9798
+  # Custom settings to differentiate this API
+  ui:
+    message: "Yo yo"
+    color: "#41b883"

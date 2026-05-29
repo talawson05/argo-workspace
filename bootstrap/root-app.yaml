@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-echo-apps
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io # Deletes child apps if you delete this root app
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com' # Replace with your Git repo URL
+    targetRevision: HEAD
+    path: argo-apps # Path to the folder containing first-echo-app.yaml and second-echo-app.yaml
+  destination:
+    server: 'https://default.svc'
+    namespace: argocd # Must be the namespace where ArgoCD itself is running
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

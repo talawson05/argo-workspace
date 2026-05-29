@@ -6,14 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/talawson05/argo-workspace'
+    repoURL: 'https://github.com/talawson05/argo-workspace.git'
     targetRevision: HEAD
     path: app-helms/second-echo
     helm:
       valueFiles:
         - values.yaml
   destination:
-    server: 'https://default.svc'
+    server: 'https://kubernetes.default.svc'
     namespace: default
   syncPolicy:
     automated:

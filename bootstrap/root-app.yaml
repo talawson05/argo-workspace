@@ -8,11 +8,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/talawson05/argo-workspace' # Replace with your Git repo URL
-    targetRevision: HEAD
+    repoURL: 'https://github.com/talawson05/argo-workspace.git' # Replace with your Git repo URL
+    targetRevision: master
     path: argo-apps # Path to the folder containing first-echo-app.yaml and second-echo-app.yaml
   destination:
-    server: 'https://default.svc'
+    server: 'https://kubernetes.default.svc'
     namespace: argocd # Must be the namespace where ArgoCD itself is running
   syncPolicy:
     automated:

@@ -17,9 +17,22 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 http://localhost:8080
 
 
+kubectl config set-context --current --namespace=argocd
+brew install argocd
+argocd login --core
+argocd app list
+
+
+
+
+
 helm repo add podinfo https://stefanprodan.github.io/podinfo
 helm repo update
 helm install first-echo podinfo/podinfo --set ui.message="Yo" --set service.type=ClusterIP
 helm install second-echo podinfo/podinfo --set ui.message="Yo yo" --set service.type=ClusterIP
+
+
+kubectl apply -f ./bootstrap/root-app.yaml
+
 
 
